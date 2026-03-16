@@ -1,0 +1,34 @@
+/* Custom Interactions & Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating WhatsApp Animation */
+@keyframes float-up-down {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.animate-float {
+  animation: float-up-down 3s ease-in-out infinite;
+}
+
+/* Hero Image Overlays */
+.hero-img-main {
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
+/* FAQ Accordion hidden state */
+.faq-answer {
+  display: none;
+}

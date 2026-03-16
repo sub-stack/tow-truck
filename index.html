@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="zh-HK" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24小時拖車及道路支援 | 專業可靠到場</title>
+
+    <!-- Google Fonts: Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#111111",
+              yellow: "#F2C230",
+              orange: "#F47A3A",
+              charcoal: "#171717",
+              soft: "#F5F5F3",
+              steel: "#CFCFCB",
+              graytext: "#5F5F5F",
+            },
+            fontFamily: {
+              sans: ['"Noto Sans TC"', "sans-serif"],
+              en: ['"Inter"', "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+              float: "0 10px 25px -5px rgba(244, 122, 58, 0.4)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="font-sans text-ink bg-white antialiased overflow-x-hidden">
+    <!-- Sticky Navigation -->
+    <nav
+      class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/90 border-b border-gray-100"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <div
+            class="flex-shrink-0 flex items-center cursor-pointer font-bold text-2xl tracking-tight text-ink"
+            onclick="window.scrollTo(0, 0)"
+          >
+            <img
+              src="public/img/logo.png"
+              alt="logo"
+              class="w-auto h-10 lg:h-12 object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
+            /><span class="text-orange">海輝車隊</span>
+          </div>
+          0
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#services"
+              class="text-ink hover:text-orange font-medium transition-colors"
+              >服務項目</a
+            >
+            <a
+              href="#cases"
+              class="text-ink hover:text-orange font-medium transition-colors"
+              >成功案例</a
+            >
+            <a
+              href="#faq"
+              class="text-ink hover:text-orange font-medium transition-colors"
+              >常見問題</a
+            >
+
+            <!-- Social Media -->
+            <div class="flex items-center space-x-4 border-l border-steel pl-6">
+              <a
+                href="#"
+                class="text-graytext hover:text-ink transition-colors text-lg"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                href="#"
+                class="text-graytext hover:text-ink transition-colors text-lg"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+
+            <!-- Call CTA -->
+            <a
+              href="tel:+85212345678"
+              class="bg-ink text-white px-6 py-2.5 rounded-full font-medium hover:bg-orange hover:shadow-float transition-all duration-300 transform hover:-translate-y-0.5"
+            >
+              <i class="fa-solid fa-phone mr-2"></i> 立即致電
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-ink hover:text-orange focus:outline-none text-2xl"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Panel -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl"
+      >
+        <div class="px-4 pt-2 pb-6 space-y-1">
+          <a
+            href="#services"
+            class="block px-3 py-3 text-base font-medium text-ink hover:bg-soft rounded-md mobile-link"
+            >服務項目</a
+          >
+          <a
+            href="#cases"
+            class="block px-3 py-3 text-base font-medium text-ink hover:bg-soft rounded-md mobile-link"
+            >成功案例</a
+          >
+          <a
+            href="#faq"
+            class="block px-3 py-3 text-base font-medium text-ink hover:bg-soft rounded-md mobile-link"
+            >常見問題</a
+          >
+          <div class="flex space-x-4 px-3 py-3">
+            <a href="#" class="text-graytext text-xl"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="#" class="text-graytext text-xl"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/85212345678"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:shadow-2xl hover:bg-[#1ebd5a] transition-colors animate-float"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section
+      class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center"
+        >
+          <!-- Left: Typography & CTA -->
+          <div class="reveal z-20">
+            <span
+              class="inline-block py-1 px-3 rounded-full bg-soft text-orange font-bold text-sm tracking-widest mb-6"
+              >24/7 ON-CALL TEAM</span
+            >
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink leading-[1.1] mb-6 tracking-tight"
+            >
+              24小時<br />
+              拖車及道路支援
+            </h1>
+            <p
+              class="text-lg text-graytext mb-8 max-w-lg leading-relaxed font-medium"
+            >
+              私家車、商用車都可安排。拖車、換軚、充電、入油、意外到場支援。<br />有實戰團隊，即時到達為你解困。
+            </p>
+            <div
+              class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+            >
+              <a
+                href="tel:+85212345678"
+                class="flex justify-center items-center bg-orange text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-ink hover:shadow-lg transition-all duration-300"
+              >
+                <i class="fa-solid fa-phone-volume mr-2"></i> 立即致電求助
+              </a>
+              <a
+                href="https://wa.me/85212345678"
+                class="flex justify-center items-center bg-white border-2 border-steel text-ink px-8 py-4 rounded-full font-bold text-lg hover:border-ink hover:bg-soft transition-all duration-300"
+              >
+                <i
+                  class="fa-brands fa-whatsapp text-[#25D366] text-xl mr-2"
+                ></i>
+                WhatsApp 查詢
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Images & Lines -->
+          <div
+            class="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full reveal delay-200"
+          >
+            <!-- The 2 Vertical Yellow Lines (Architectural Core) -->
+            <div
+              class="absolute top-0 bottom-0 left-[20%] w-1.5 bg-yellow opacity-80 z-0"
+            ></div>
+            <div
+              class="absolute top-10 bottom-[-20px] left-[60%] w-2 bg-yellow opacity-90 z-0"
+            ></div>
+
+            <!-- Main Image (Tow Truck arriving) -->
+            <div
+              class="absolute top-0 right-0 w-[85%] h-[75%] rounded-2xl overflow-hidden shadow-2xl z-10 hero-img-main border-4 border-white"
+            >
+              <img
+                src="public/img/rescue-scene.png"
+                alt="拖車到場救援"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent"
+              ></div>
+            </div>
+
+            <!-- Secondary Image (Crew working) -->
+            <div
+              class="absolute bottom-0 left-0 w-[55%] h-[50%] rounded-2xl overflow-hidden shadow-2xl z-20 border-4 border-white transform hover:scale-105 transition-transform duration-500"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1470&auto=format&fit=crop"
+                alt="專業前線團隊"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-soft">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4">
+            核心道路支援服務
+          </h2>
+          <p class="text-graytext text-lg">
+            一眼睇清我們能為你做什麼，清楚直接，絕不繞圈。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Service 1 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform duration-300 reveal"
+          >
+            <div
+              class="w-14 h-14 bg-orange/10 rounded-xl flex items-center justify-center text-orange text-2xl mb-6"
+            >
+              <i class="fa-solid fa-truck-pickup"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-ink mb-3">緊急拖車</h3>
+            <p class="text-graytext mb-4 leading-relaxed">
+              壞車無法開動，引擎故障，可即時安排拖走至相熟車房或指定地點。
+            </p>
+            <span
+              class="text-sm font-semibold text-orange bg-orange/5 px-3 py-1 rounded-full"
+              >適用：私家車 / 商用車</span
+            >
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform duration-300 reveal delay-100"
+          >
+            <div
+              class="w-14 h-14 bg-yellow/20 rounded-xl flex items-center justify-center text-yellow text-2xl mb-6"
+            >
+              <i class="fa-solid fa-dharmachakra"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-ink mb-3">上門換軚</h3>
+            <p class="text-graytext mb-4 leading-relaxed">
+              爆軚或胎壓異常，前線專員帶備工具即場為你更換後備軚，安全極速。
+            </p>
+            <span
+              class="text-sm font-semibold text-yellow bg-yellow/10 px-3 py-1 rounded-full text-yellow-700"
+              >適用：路面突發爆軚</span
+            >
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform duration-300 reveal delay-200"
+          >
+            <div
+              class="w-14 h-14 bg-ink/5 rounded-xl flex items-center justify-center text-ink text-2xl mb-6"
+            >
+              <i class="fa-solid fa-car-battery"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-ink mb-3">搭電救援</h3>
+            <p class="text-graytext mb-4 leading-relaxed">
+              車輛無電無法著車？提供上門過江龍搭電支援，為電池重新注入動力。
+            </p>
+            <span
+              class="text-sm font-semibold text-ink bg-ink/5 px-3 py-1 rounded-full"
+              >適用：停泊後無電</span
+            >
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform duration-300 reveal"
+          >
+            <div
+              class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-6"
+            >
+              <i class="fa-solid fa-gas-pump"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-ink mb-3">代客入油</h3>
+            <p class="text-graytext mb-4 leading-relaxed">
+              半路臨時冇油拋錨，我們可以安排專人送油到場，讓你順利開往油站。
+            </p>
+            <span
+              class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full"
+              >適用：燃油耗盡</span
+            >
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform duration-300 reveal delay-100 lg:col-span-2"
+          >
+            <div
+              class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center text-red-600 text-2xl mb-6"
+            >
+              <i class="fa-solid fa-car-burst"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-ink mb-3">交通意外到場支援</h3>
+            <p class="text-graytext mb-4 leading-relaxed max-w-2xl">
+              不幸發生交通意外後，現場環境混亂？我們可迅速安排人手到場協助處理路面狀況，並安全拖走損毀車輛，減輕你的壓力。
+            </p>
+            <div class="flex items-center space-x-4 mt-6">
+              <a
+                href="tel:+85212345678"
+                class="text-orange font-bold hover:text-ink transition-colors flex items-center"
+              >
+                即時求助 <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats & Trust Section -->
+    <section class="py-20 bg-yellow relative overflow-hidden">
+      <div
+        class="absolute top-0 right-0 w-[50%] h-full bg-orange/10 -skew-x-12 transform origin-top"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-ink">
+          <div class="reveal">
+            <div class="text-4xl md:text-5xl font-extrabold font-en mb-2">
+              <span class="counter" data-target="8500">0</span>+
+            </div>
+            <div class="font-bold text-lg">已服務客戶</div>
+          </div>
+          <div class="reveal delay-100">
+            <div class="text-4xl md:text-5xl font-extrabold font-en mb-2">
+              <span class="counter" data-target="99">0</span>%
+            </div>
+            <div class="font-bold text-lg">客戶滿意度</div>
+          </div>
+          <div class="reveal delay-200">
+            <div class="text-4xl md:text-5xl font-extrabold font-en mb-2">
+              <span class="counter" data-target="15">0</span>年
+            </div>
+            <div class="font-bold text-lg">行業救援經驗</div>
+          </div>
+          <div class="reveal delay-300">
+            <div class="text-4xl md:text-5xl font-extrabold font-en mb-2">
+              <span class="counter" data-target="24">0</span>/7
+            </div>
+            <div class="font-bold text-lg">全天候候命</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage Locations Section -->
+    <section class="py-24 bg-white border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between reveal"
+        >
+          <div class="md:w-1/3 mb-10 md:mb-0">
+            <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4">
+              真實車隊<br />覆蓋港九新界
+            </h2>
+            <p class="text-graytext text-lg mb-6">
+              我們不是空殼接線網站，擁有實體車隊據點，靈活調動，確保用最短時間到達事故現場。
+            </p>
+            <a
+              href="https://wa.me/85212345678"
+              class="inline-block border-2 border-ink text-ink font-bold px-6 py-3 rounded-full hover:bg-ink hover:text-white transition-colors"
+            >
+              查詢你的位置
+            </a>
+          </div>
+          <div class="md:w-3/5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <!-- Location 1 -->
+            <div class="bg-soft p-6 rounded-2xl border border-steel/50">
+              <i class="fa-solid fa-location-dot text-orange text-3xl mb-4"></i>
+              <h4 class="text-xl font-bold text-ink mb-2">香港島</h4>
+              <p class="text-sm text-graytext">
+                快速安排市區及半山支援，熟悉港島路面。
+              </p>
+            </div>
+            <!-- Location 2 -->
+            <div class="bg-soft p-6 rounded-2xl border border-steel/50">
+              <i
+                class="fa-solid fa-map-location-dot text-yellow-600 text-3xl mb-4"
+              ></i>
+              <h4 class="text-xl font-bold text-ink mb-2">九龍區</h4>
+              <p class="text-sm text-graytext">
+                密集路段出車靈活，特快處理塞車黑點。
+              </p>
+            </div>
+            <!-- Location 3 -->
+            <div class="bg-soft p-6 rounded-2xl border border-steel/50">
+              <i class="fa-solid fa-route text-ink text-3xl mb-4"></i>
+              <h4 class="text-xl font-bold text-ink mb-2">新界區</h4>
+              <p class="text-sm text-graytext">
+                廣泛覆蓋住宅區及主要幹道、公路路段。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Cases Section (Dark Theme) -->
+    <section id="cases" class="py-24 bg-charcoal text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-16 reveal"
+        >
+          <div class="max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">實戰案例說話</h2>
+            <p class="text-gray-400 text-lg">
+              先信任，再查詢。這些都是我們前線團隊真實處理過的救援任務。
+            </p>
+          </div>
+          <div class="mt-6 md:mt-0">
+            <button
+              class="text-orange hover:text-white transition-colors font-bold group"
+            >
+              查看更多案例
+              <i
+                class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Case 1 -->
+          <div
+            class="bg-[#222] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal"
+          >
+            <div class="h-56 overflow-hidden relative">
+              <div
+                class="absolute top-4 left-4 bg-ink/80 backdrop-blur text-white text-xs font-bold px-3 py-1.5 rounded-full z-10 border border-white/10"
+              >
+                <span class="text-orange mr-1">•</span> 3月14日
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1713623311317-d3c43a4be4cf?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="九龍灣新車拖運"
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">九龍灣新車拖運</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                協助車行運送未上牌新車，全程小心固定，零刮花安全送達指定交車地點。
+              </p>
+            </div>
+          </div>
+
+          <!-- Case 2 -->
+          <div
+            class="bg-[#222] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal delay-100"
+          >
+            <div class="h-56 overflow-hidden relative">
+              <div
+                class="absolute top-4 left-4 bg-ink/80 backdrop-blur text-white text-xs font-bold px-3 py-1.5 rounded-full z-10 border border-white/10"
+              >
+                <span class="text-yellow mr-1">•</span> 3月10日
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=1632&auto=format&fit=crop"
+                alt="吐露港公路爆軚"
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">吐露港公路爆軚救援</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                客貨車於高速公路突發爆軚，團隊20分鐘內趕到現場，做好安全封路並極速換軚。
+              </p>
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div
+            class="bg-[#222] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal delay-200"
+          >
+            <div class="h-56 overflow-hidden relative">
+              <div
+                class="absolute top-4 left-4 bg-ink/80 backdrop-blur text-white text-xs font-bold px-3 py-1.5 rounded-full z-10 border border-white/10"
+              >
+                <span class="text-red-500 mr-1">•</span> 2月28日
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1469&auto=format&fit=crop"
+                alt="交通意外善後"
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">大埔道意外到場處理</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                深夜私家車失控撞欄，車頭嚴重損毀。團隊到場協助清走路面碎片，並將廢車拖回車房。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-soft">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+          <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4">
+            最實際的問題，最直接的回答
+          </h2>
+          <p class="text-graytext text-lg">
+            節省時間，即刻了解我們的服務細節。
+          </p>
+        </div>
+
+        <div class="space-y-4 reveal delay-100">
+          <!-- FAQ Item 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-steel/20 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+            >
+              <span class="text-lg font-bold text-ink">大約幾耐可以到場？</span>
+              <i
+                class="fa-solid fa-chevron-down text-orange transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-graytext leading-relaxed">
+              視乎交通情況及地區，一般情況下港九新界最快可於 20-45
+              分鐘內到達現場。緊急情況請直接致電，我們會即時提供預計到達時間。
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-steel/20 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+            >
+              <span class="text-lg font-bold text-ink"
+                >服務時間是什麼？半夜有車嗎？</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-orange transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-graytext leading-relaxed">
+              我們提供 24
+              小時全天候服務。無論是深夜、凌晨還是公眾假期，均有前線人員當值出車。
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-steel/20 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+            >
+              <span class="text-lg font-bold text-ink"
+                >私家車和商用客貨車都接嗎？</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-orange transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-graytext leading-relaxed">
+              是的，我們的車隊配備能處理各類型私家車、客貨車(Van仔)以至輕型貨車的拖運及救援需求。
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-steel/20 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+            >
+              <span class="text-lg font-bold text-ink"
+                >發生交通意外後可以提供什麼支援？</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-orange transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-graytext leading-relaxed">
+              我們可迅速派員到場協助。除了拖走無法行駛的車輛外，亦可協助清理現場碎片，及提供後續維修車房的轉介建議。
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-steel/20 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+            >
+              <span class="text-lg font-bold text-ink">如何收費或報價？</span>
+              <i
+                class="fa-solid fa-chevron-down text-orange transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-graytext leading-relaxed">
+              收費視乎服務種類、車型及地點距離而定。請 WhatsApp
+              或致電我們，提供事發地點及車輛狀況，我們會立刻提供清晰實價，絕不坐地起價。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer & Final CTA -->
+    <footer class="bg-ink text-white pt-20 pb-10 border-t-4 border-yellow">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16"
+        >
+          <!-- Brand Info -->
+          <div class="lg:col-span-2">
+            <div
+              class="font-bold text-3xl tracking-tight mb-6 flex items-center"
+            >
+              <img
+                src="public/img/logo.png"
+                alt="logo"
+                class="w-auto h-20 lg:h-12 object-contain rounded-lg transition-transform duration-300 group-hover:scale-105 mr-3"
+              />
+              <span class="text-orange">海輝車隊</span>
+            </div>
+            <p class="text-gray-400 mb-8 max-w-sm leading-relaxed">
+              可靠、熟手、隨時到場的香港拖車團隊。專注為私家車及商用車提供最直接的道路支援方案。
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="tel:+85212345678"
+                class="bg-orange hover:bg-white hover:text-ink text-white px-6 py-3 rounded-full font-bold transition-colors"
+              >
+                <i class="fa-solid fa-phone mr-2"></i> 立即致電
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-white border-b border-gray-800 pb-2 inline-block"
+            >
+              快速導航
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-yellow transition-colors"
+                  >道路支援服務</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#cases"
+                  class="text-gray-400 hover:text-yellow transition-colors"
+                  >真實工作案例</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  class="text-gray-400 hover:text-yellow transition-colors"
+                  >常見問題</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h4
+              class="text-lg font-bold mb-6 text-white border-b border-gray-800 pb-2 inline-block"
+            >
+              聯絡我們
+            </h4>
+            <ul class="space-y-4 text-gray-400">
+              <li class="flex items-start">
+                <i class="fa-solid fa-location-dot mt-1.5 mr-3 text-orange"></i>
+                <span>覆蓋地區：<br />香港島、九龍、新界</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fa-solid fa-clock mr-3 text-orange"></i>
+                <span>服務時間：24小時全天候</span>
+              </li>
+              <li class="flex items-center mt-4">
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-orange transition-colors mr-3"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-orange transition-colors"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500"
+        >
+          <p>&copy; 2026 HK Rescue Towing Service. All rights reserved.</p>
+          <div class="mt-4 md:mt-0 space-x-4">
+            <a href="#" class="hover:text-white transition-colors">私隱條款</a>
+            <a href="#" class="hover:text-white transition-colors">服務條款</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery 3.7+ -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
